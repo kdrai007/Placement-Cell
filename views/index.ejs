@@ -1,0 +1,82 @@
+<%- include('header-footer/header')%>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .home {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+            width: 100vw;
+        }
+
+        .items {
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            color: #8f50e22a;
+        }
+
+        hr {
+            width: 50vw;
+            border-top: 1px dashed red;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            width: 40vw;
+            justify-content: space-between;
+        }
+
+        button {
+            font-size: 22px;
+            padding: 5px;
+            background-color: #664eeb;
+            color: white;
+            height: 50px;
+            cursor: pointer;
+            border-color: #664eeb;
+            border-radius: 14px;
+
+        }
+
+        button:hover {
+            color: white;
+            background-color: green;
+        }
+
+        .add {
+            color: blue;
+            font-size: 10px;
+        }
+    </style>
+
+    <body>
+        <%- include('nav')%>
+            <div class="home">
+                <h1>Student Names</h1>
+
+                <hr>
+                <div class="items">
+                    <% data.forEach((e,idx)=>{ %>
+                        <a href="profile/<%-  e._id -%>"> <span>
+                                <%= idx+1 %> -
+                            </span>
+                            <%= e.student %>
+                        </a>
+                        <% }) %>
+                </div>
+            </div>
+    </body>
+
+    </html>

@@ -1,0 +1,61 @@
+<%- include('header-footer/header')%>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: lightblue;
+            min-height: 50px;
+            margin-bottom: 50px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 0 20px;
+        }
+
+        nav a:hover {
+            color: lightgray;
+        }
+
+        nav {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add a border to the bottom of the navbar */
+        nav {
+            border-bottom: 3px solid purple;
+        }
+
+        /* Add a background image to the navbar */
+        nav {
+            background-image: linear-gradient(to right, purple, pink);
+        }
+
+        /* Change the font of the navbar links */
+        nav a {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Change the color of the navbar links when they are active (current page) */
+        nav a.active {
+            color: purple;
+        }
+    </style>
+
+    <body>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/details">Add Student</a>
+            <a href="/about">About</a>
+        </nav>
+    </body>
+
+    </html>

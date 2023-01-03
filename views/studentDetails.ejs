@@ -1,0 +1,137 @@
+<!-- Batch
+Student Details (including college, status: [placed, not_placed])
+Course Scores (including DSA Final Score, WebD Final Score, React Final Score)
+Interviews (including company name and Date)
+Results (this is a mapping between company, and student, contains result: [PASS, FAIL, On Hold, Didn’t Attempt]) -->
+
+<%- include('header-footer/header')%>
+    <style>
+        * {
+            padding: none;
+            margin: none;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        /* Change the font size and color of the input text */
+        input[type="text"],
+        input[type="number"] {
+            font-size: 18px;
+            color: purple;
+        }
+
+        /* Add a border and padding to the input */
+        input[type="text"],
+        input[type="number"] {
+            border: 2px solid purple;
+            padding: 10px;
+        }
+
+        /* Add a hover effect to the input */
+        input[type="text"]:hover,
+        input[type="number"]:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Change the background color of the dropdown menu */
+        select {
+            background-color: lightgray;
+        }
+
+        /* Change the font size and color of the dropdown menu options */
+        select option {
+            font-size: 18px;
+            color: purple;
+        }
+
+        /* Add a hover effect to the dropdown menu options */
+        select option:hover {
+            background-color: purple;
+            color: white;
+        }
+
+        #status,
+        select {
+            padding: 9px;
+            background: white;
+            font-size: 15px;
+        }
+
+        #submit {
+            border: 1px solid #a02beed0;
+            padding: 10px;
+            border-radius: 20px;
+            background-color: #a02beed0;
+            color: white;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #submit:hover {
+            background-color: #a02bee88;
+        }
+    </style>
+
+    <body>
+        <%- include('nav')%>
+            <div class="container">
+                <h1>Enter Your Details</h1>
+                <form action="/profile" method="post">
+                    <!-- Student Details -->
+                    <div>
+                        <label for="student">Student Name:</label><br>
+                        <input type="text" id="student" name="student"><br>
+                        <label for="college">College:</label><br>
+                        <input type="text" id="college" name="college"><br>
+                        <label for="status">Status:</label><br>
+                        <select id="status" name="status">
+                            <option value="placed">Placed</option>
+                            <option value="not placed">Not Placed</option>
+                        </select>
+                    </div>
+
+                    <!-- Course Scores -->
+                    <div>
+                        <label for="dsa">DSA Final Score:</label><br>
+                        <input type="number" id="dsa" name="dsa"><br>
+                        <label for="web">WebD Final Score:</label><br>
+                        <input type="number" id="web" name="web"><br>
+                        <label for="react">React Final Score:</label><br>
+                        <input type="number" id="react" name="react"><br>
+                    </div>
+
+                    <!-- Interviews -->
+                    <div>
+                        <label for="company">Company Name:</label><br>
+                        <input type="text" id="company" name="company"><br>
+                        <label for="date">Date:</label><br>
+                        <input type="date" id="date" name="date"><br>
+                    </div>
+
+                    <!-- Results -->
+                    <div>
+                        <label for="result">Result:</label><br>
+                        <select id="result" name="result">
+                            <option value="PASS">PASS</option>
+                            <option value="FAIL">FAIL</option>
+                            <option value="On Hold">On Hold</option>
+                            <option value="Didn't Attempt">Didn't Attempt</option>
+                        </select>
+                    </div>
+                    <button id="submit" type="submit">submit</button>
+                </form>
+            </div>
+
+    </body>
+
+    </html>

@@ -1,0 +1,94 @@
+<%- include('header-footer/header')%>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        html {
+            background-color: #eee;
+        }
+
+        .container {
+            margin: 20px auto;
+            width: 50vw;
+            height: 550px;
+            display: grid;
+            grid-template-columns: 500px 500px;
+            grid-row: auto auto;
+            grid-column-gap: 10px;
+            /* grid-row-gap: 20px; */
+        }
+
+        .box {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            height: 50px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            font-size: 20px;
+        }
+
+        #download-link {
+            border: 1px solid #a02beed0;
+            width: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background-color: #a02beed0;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+
+    <body>
+        <%- include('nav')%>
+            <div class="container">
+                <div class="box">
+                    Student
+                </div>
+                <div class="box">
+                    <%=data.student%>
+                </div>
+                <div class="box">College</div>
+                <div class="box">
+                    <%=data.college%>
+                </div>
+                <div class="box">Placement Status</div>
+                <div class="box">
+                    <%= data.status%>
+                </div>
+                <div class="box">DSA Final Score</div>
+                <div class="box">
+                    <%= data.scores.dsa%>
+                </div>
+                <div class="box">WEB DEV Final Score</div>
+                <div class="box">
+                    <%= data.scores.web%>
+                </div>
+                <div class="box">React Final Score</div>
+                <div class="box">
+                    <%= data.scores.react%>
+                </div>
+                <div class="box">(Interview) Company name</div>
+                <div class="box">
+                    <%= data.interviews[0].company%>
+                </div>
+                <div class="box">Result</div>
+                <div class="box">
+                    <%= data.results[0].result%>
+                </div>
+                <a href="../public/data.csv" id="download-link" download="data.csv">download</a>
+            </div>
+
+            </div>
+
+    </body>
+
+    </html>
